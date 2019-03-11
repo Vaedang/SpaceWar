@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     public GameObject shot;
     public Transform shotSpawner;
     float nextFireTime, fireRate;
-    
+
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
         {
             nextFireTime = Time.time + fireRate;
             Instantiate(shot, shotSpawner.position, Quaternion.identity);
+            audioSource.Play();
+            
         }    
     }
 
